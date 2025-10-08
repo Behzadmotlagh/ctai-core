@@ -1,0 +1,31 @@
+name: Repo Protection Audit
+on:
+  workflow_dispatch:
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Setup git (ensure history)
+        run: git fetch --all --prune
+
+      - name: Make script executable
+        run: chmod +x ./repo_protection_audit.sh
+
+      - name: Run audit script
+        env:
+          GH_PAT: ${{ secrets.GH_PAT }}   # optional if you do not have gh in runner
+        run: |
+          ./repo_protection_audit.sh
+
+      - name: List outputs
+        run: ls -la repo_audit_output || true
+
+      - name: Upload audit artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: repo-audit-output
+          path: repo_audit_output
