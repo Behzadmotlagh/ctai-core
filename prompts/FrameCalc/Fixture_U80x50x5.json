@@ -1,0 +1,23 @@
+{
+  "context_id": "CTAI.FrameCalc.Fixture_U80x50x5",
+  "objective": "محاسبه Ix و Wx برای پروفیل U80x50x5 با طول 6 متر",
+  "input_data": {
+    "profile": "U80x50x5",
+    "length": 6000,
+    "material": {
+      "name": "Fe52",
+      "Re": 355
+    }
+  },
+  "acceptance_criteria": {
+    "Ix_min": 80,
+    "Wx_min": 20,
+    "units": "cm⁴/cm³",
+    "tolerance": "±5%"
+  },
+  "metadata": {
+    "timestamp": "$(date +%Y-%m-%dT%H:%M:%S%z)",
+    "copilot_model": "vX.Y",
+    "engineer_signature": "Behzad.MechEng"
+  }
+}
