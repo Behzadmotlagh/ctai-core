@@ -7,3 +7,6 @@ tmp/
 .DS_Store
 *.pem
 *.key
+key
+key.pub
+~/.ssh/*.pem
