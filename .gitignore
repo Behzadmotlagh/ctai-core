@@ -13,3 +13,4 @@ key.pub
 key
 key.pub
 ~/.ssh/*.pem
+results/
